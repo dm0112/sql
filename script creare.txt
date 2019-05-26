@@ -1,0 +1,36 @@
+set serveroutput on;
+drop table users;
+create table users (
+userID number not null,
+firstName varchar2(20),
+lastName varchar2(20),
+adresa varchar2(20),
+privilegies varchar2(20),
+phoneNumber number,
+primary KEY(userID)
+)
+drop table categories;
+create table categories(
+catName varchar2(20),
+catId number not null,
+primary KEY(catId)
+)
+drop table products;
+create table products(
+prodID number not null,
+prodName varchar(30),
+prodDesc varchar(250),
+prodPrice float,
+primary key(prodID),
+catId number not null,
+constraint catId foreign KEY (catId) references categories(catId)
+)
+drop sequence userID_seq;
+
+Create sequence userID_seq
+minvalue 1
+start with 1
+increment by 1
+cache 20;
+
+
