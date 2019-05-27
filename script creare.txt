@@ -8,12 +8,12 @@ drop sequence catID_seq;
 
 create table users (
 userID number not null,
-pw number not null,
+pw varchar(20) not null,
 firstName varchar2(20),
 lastName varchar2(20),
 adresa varchar2(20),
 privilegies varchar2(20),
-phoneNumber number,
+phoneNumber varchar(20),
 primary KEY(userID)
 )
 
